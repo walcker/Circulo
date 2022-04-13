@@ -1,16 +1,19 @@
 package circulo;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-        float raio = 5;
-        Circulo calc = new Circulo();
+        float raio;
 
-        calc.perimetro = (float) (2 * Math.PI * raio);
-        calc.area = (float) (Math.PI*Math.pow(raio,2));
+        var scanner = new Scanner(System.in);
+        System.out.println("Entre com o raio do circulo.");
+        float input = Float.parseFloat(scanner.next());
+        raio = input;
 
-        System.out.println(calc.perimetro);
-        System.out.println(calc.area);
+        Circulo calc = new Circulo(raio);
+        calc.calcular();
 
     }
 
